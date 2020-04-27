@@ -22,6 +22,10 @@ nav {
     background:  none;
 }
 /* Typeography General*/
+span {
+    font-style: italic;
+    font-weight: bold;
+}
 h1 {
     padding: 1em;
     margin: 0;
@@ -48,10 +52,6 @@ blockquote::before {
 }
 blockquote::after {
     content: close-quote;
-}
-span {
-    font-style: italic;
-    font-weight: bold;
 }
 .email {
     text-decoration: none;
