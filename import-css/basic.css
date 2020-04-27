@@ -28,7 +28,7 @@ h1 {
 }
 h2 {
     font-size: 3em;
-    line-height: 1;
+    line-height: .8;
 }
 span {
     font-weight: 400;
