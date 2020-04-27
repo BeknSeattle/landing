@@ -23,3 +23,7 @@ footer a {
 .page__footer p + p {
     margin: 0;
 }
+footer span {
+    font-style: italic;
+    font-weight: bold;
+}
