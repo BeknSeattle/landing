@@ -32,18 +32,18 @@
         padding-top: 3em;
     }
 }
-@media only screen and (min-width: 800px){
+/* @media only screen and (min-width: 800px){
     .landing__container {
         padding-top: 4em;
     }
-}
+} */
 @media only screen and (min-width: 1200px){
     blockquote {
         font-size: 1.6em;
     }
     .landing__container {
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 5em 1em 1em;
+        /* padding: 5em 1em 1em; */
         justify-content: space-between;
         width: 70%;
     }
