@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulating the DOM</title>
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- HTML Follows BEM naming conventions 
+  IDs are only used for sections to connect menu achors to sections -->
+  <header class="page__header">
+    <nav class="navbar__menu">
+        <h1><a href="#cat">Joygi / <span class="navbar__menu__logo"><img src="img/conservingenergy.png" alt="Joygi The Cat illustration by Vicky Reyes">/</span> Bek</a></h1>
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <ul id="navbar__list"></ul>
+    </nav>
+  </header>
+  <main>
+    <header id="cat" class="main__hero">
+      <img src="img/joygidcat-whresmine.png" alt="Joygi The Cat Illustration by Maria Victoria Reyes">
+    </header>
+    <figcaption>Illustration by Maria Victoria Reyes</figcaption>
+    <!-- Each Section has an ID (used for the anchor) and 
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+    <section id="Bek" data-nav="Bek" class="your-active-class">
+      <div class="landing__container">
+      <h2>I am Bek</h2>
+      <blockquote>JavaScript is not for the faint of heart. Diving into it versus swimming, you'll find an enormous amount of fish that I think may swallow me whole. Unless I try to eat if first (mic drop)</blockquote>
+      <article>
+        <p>This landing page project was not easy. For a JavaScript beginner like me, it was fun when your code starts to make sense while your starting to learn. And why iterating using the for-of loop and the old var = 0 etc. etc. works too.</p>
+        
+        <p>Learning those other browsers may not as friendly as Chrome. Learning <code>scrollToView()</code> does not work on Safari since 2005? What?</p>
+        
+        <p>JavaScript is not for the faint of heart. Diving into it versus swimming, you'll find an enormous amount of fish that I think may swallow me whole. Unless I try to eat if first (mic drop).</p>         
+      </article>
+      </div>
+    </section>
+    <section id="Project" data-nav="Project">
+      <div class="landing__container">
+      <h2>2020 Projects</h2>
+      <blockquote>I think I spend more time trying to debug this second project than re-designing its CSS. Who would have thought that making your site interactive using JavaScript will be this hard?</blockquote>
+      <article>
+        <p>I think I spend more time trying to debug this second project than re-designing its CSS. Who would have thought that making your site interactive using JavaScript will be this hard?</p>
+        
+        <p>I have never spent so much time in the console before. Boy oh boy! Regularly clearing the browser's history helped a lot. Googling the error responses and learning from other developers how they solved particular bugs helped a lot too. I learned so much that my head still hurts. When I already answered a specific action or function. Understanding how it works logically is mind-blowing.</p>
+      </article>
+      <img src="img/sleepingsoundly@2x.png" alt="Joygi The Cat Illustration by Maria Victoria Reyes">
+      </div>
+    </section>
+    <section id="About" data-nav="About">
+      <div class="landing__container">
+        <h2>Loving What I do</h2>
+        <article class="item-1A">
+          <p>I love what I am doing. I love how a simple HTML tag with the combination of CSS looks fantastic on screen. Learning how far Flexbox and CSS Grid evolved through the years that you don't need CSS Frameworks anymore. I love typography. The accessibility versus legibility. All the ins and outs that make a site responsive. Learning how people interacts and responds to your site's structure and learning to debug your code is hard but rewarding. Now that I have learned how different browsers listens to user's triggered events just made me love this job even more.</p>
+        </article>
+      </div>
+    </section>
+    <section id="Contact" data-nav="Contact">
+      <div class="landing__container">
+      <h2>Hire Me</h2>
+      <blockquote> I think I spend more time trying to debug this second project than re-deigning its CSS. Who would have thought that making your site interactive using JavaScript will be this hard? </blockquote>
+      <article><p>At first, I always thought whatever design I spewed out from any browser looked so freakin awesome till I learn the dos and the don'ts. The rules that you need to learn to make your design readable, understandable and pleasing. Always learning non-stop and involve, evolve and be dynamic is a game-changer in this field or for any front-end web
+      developer fo that matter. I love this job because I do it for the people I love. Loving what you do while putting food on the table makes all the time spent in the console tab worthwhile is it not? For my Joygi.</p>
+      <p>Shoot me an <a class="email envelope" href="mailto:mariavictoriabreyes@gmail.com">email <i class="fa fa-envelope"></i></a> and be my guest!</p></article>
+      <img src="img/relaxletsgroom@2x.png" alt="Joygi The Cat Illustration by Maria Victoria Reyes">
+      </div>
+    </section>    
+  </main>
+<footer class="page__footer">
+  <div>
+    <h3>Udacity's JavaScript Template</h3>
+    <p>Edited by the awesome Maria Victoria Reyes.</p>
+    <p><span>Want to know what the original template looks like?</span></p>
+    <p>Here's the <a href="https://github.com/udacity/fend/tree/refresh-2019">starter code.</a> Enjoy editing.</p>
+  </div>
+  <div>
+    <h4>All these hardwork for</h4>
+    <p>Joygi / And her cat /</p>
+  </div>
+  <div>
+    <h4>Illustrations</h4>
+    <p>by Maria Victoria Reyes</p></div>
+  </div>
+  <div>
+  <h4>Social media links</h4>
+  <ul>
+    <li><a href="https://twitter.com/joygibek" class="twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/joygibek" class="linkedin">linkedin <i class="fa fa-linkedin"></i></a></li>
+    <li><a href="https://www.facebook.com/Joygibek" class="facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+  </ul>
+  </div>
+</footer>  
+<script src="js/app.js"></script>
+</body>
+</html>
