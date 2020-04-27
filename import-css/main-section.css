@@ -1,8 +1,7 @@
 /* Header Styles */
 .main__hero {
     padding-top: 8em;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 .main__hero img {
     width: 70%;
