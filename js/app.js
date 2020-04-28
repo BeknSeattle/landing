@@ -134,9 +134,10 @@ const clientRect = function (elem) {
 //going to each section if the distance of the viewport is top = 0 and left = 0
 //adding class active-section
 const isInViewport = clientRect;
-window.addEventListener('scroll', function (event) {
+window.addEventListener('scroll', function (e) {
+    e.preventDefault();
     //checking all section when it hits the top of the viewport
-    for (let i = 0; i < mainSections.length,navLinks.length; i ++) {
+    for (let i = 0; i < mainSections.length; i ++) {
         if (isInViewport(mainSections[i])){
             console.log('In viewport!');
             mainSections[i].classList.add('active-section');
