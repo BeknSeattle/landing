@@ -67,8 +67,7 @@ function makeActive() {
     for (var i = 0; i < navLinks.length; i++){
         // Add class 'active' to the navigation links
         navLinks[i].classList.remove('active');
-        this.classList.add('active');
-        
+        this.classList.add('active');        
         //clicking active links will also go to section areas and add and remove your-active-class class.
         activeSection();
     }
@@ -82,6 +81,8 @@ function makeActive() {
         }
     }
 }
+
+//activating the active class link and the section class: your-active-class
 function nowActive() {
     for (var i = 0; i < navLinks.length; i++) {
         navLinks[i].addEventListener('click', makeActive);
@@ -91,8 +92,9 @@ nowActive();
 
 // Scroll to anchor ID using scrollIntoView event
 // smooth scrolling does not work on safari 
+const allHref = select.querySelectorAll('a[href^="#"]');
 function scrollToLink() {
-    select.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    allHref.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -112,11 +114,35 @@ function showNavOnScroll() {
     let scrollDown = window.pageYOffset;
     if (scrollUp > scrollDown) {
         headerNav.style.top = "0";
-    }
-    else {
+    } else {
         headerNav.style.top = "-88.75px";
     }
     scrollUp = scrollDown;
-
 }
 document.addEventListener('scroll', showNavOnScroll);
+
+//const clientRect sees if the viewport is on top when scrolled
+//information from https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/
+const clientRect = function (elem) {
+    let distance = elem.getBoundingClientRect();
+    return (distance.top >= 0 &&
+        distance.left >= 0 &&
+        distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        distance.right <= (window.innerWidth || document.documentElement.clientWidth));
+};
+//detecting if the specific section id is on the top of the viewport
+//going to each section if the distance of the viewport is top = 0 and left = 0
+//adding class active-section
+const isInViewport = clientRect;
+window.addEventListener('scroll', function (event) {
+    //checking all section when it hits the top of the viewport
+    for (let i = 0; i < mainSections.length,navLinks.length; i ++) {
+        if (isInViewport(mainSections[i])){
+            console.log('In viewport!');
+            mainSections[i].classList.add('active-section');
+        } else {
+            console.log('Nope...');
+            mainSections[i].classList.remove('active-section');
+        }
+    }
+}, false);
