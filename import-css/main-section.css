@@ -98,6 +98,12 @@ section.your-active-class {
     border-bottom: 1px solid #fa6a43;
     line-height: .3;
 }
+.active-scroll {
+    background: #fa6a43;
+    padding: 1em;
+    border-radius: 4px;
+    color: #1d1d1f;
+}
 .active-section {
     background: rgba(29, 29, 31, 0.12);
 }

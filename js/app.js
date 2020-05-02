@@ -71,12 +71,10 @@ function makeActive() {
         //clicking active links will also go to section areas and add and remove your-active-class class.
         activeSection();
     }
-
     function activeSection() {
         if (navLinks[i].classList.contains('active')) {
             mainSections[i].classList.add('your-active-class');
-        }
-        else {
+        } else {
             mainSections[i].classList.remove('your-active-class');
         }
     }
@@ -125,10 +123,8 @@ document.addEventListener('scroll', showNavOnScroll);
 //information from https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/
 const clientRect = function (elem) {
     let distance = elem.getBoundingClientRect();
-    return (distance.top >= 0 &&
-        distance.left >= 0 &&
-        distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        distance.right <= (window.innerWidth || document.documentElement.clientWidth));
+    return (distance.top >= 0 && distance.left >= 0 && 
+        distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) && distance.right <= (window.innerWidth || document.documentElement.clientWidth));
 };
 //detecting if the specific section id is on the top of the viewport
 //going to each section if the distance of the viewport is top = 0 and left = 0
@@ -137,13 +133,20 @@ const isInViewport = clientRect;
 window.addEventListener('scroll', function (e) {
     e.preventDefault();
     //checking all section when it hits the top of the viewport
-    for (let i = 0; i < mainSections.length; i ++) {
+    for (let i = 0; i < mainSections.length, i < navLinks.length; i++) {
         if (isInViewport(mainSections[i])){
             console.log('In viewport!');
-            mainSections[i].classList.add('active-section');
+            mainSections[i].classList.add('active-section');       
         } else {
             console.log('Nope...');
-            mainSections[i].classList.remove('active-section');
+            mainSections[i].classList.remove('active-section');       
         }
+        if (mainSections[i].classList.contains('active-section')) {
+            navLinks[i].classList.add('active-scroll');           
+        } else {
+            navLinks[i].classList.remove('active-scroll');   
+        }      
     }
 }, false);
+
+
