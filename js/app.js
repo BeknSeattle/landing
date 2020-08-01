@@ -40,24 +40,17 @@ insertDataToArray();
  * Begin Main Functions
  *
 */
-function createNavigation() {
-    for (let i = 0; i < array.length; i++) {
-        // Build menu
-        let { link, li, text } = linkAttribute(i);
-        // whatever is written in section area with its id and data-nav attribute will be written in the const array automatically amd becomes a link and attached the data-nav text as the navigation link inside the ul tag.
-        link.setAttribute('href', '#' + (array[i]));
-        li.appendChild(link);
-        link.appendChild(text);
-        // new links inside the ul #navbar__list
-        select.insertBefore(li, select.childNodes[i]);
-        console.log(select);
-    }
+function createNavigation() { 
+    //whatever is written in section area with its id and data-nav attribute will be written in the const array automatically amd becomes a navigation link
+    for (const el of array){
+    const newCreatedNav = document.createTextNode(el);
+    const a = document.createElement('a');
+    a.setAttribute('href', '#' + el);
+    const li = document.createElement('li');
 
-    function linkAttribute(i) {
-        let li = document.createElement("li");
-        let link = document.createElement("a");
-        let text = document.createTextNode(array[i]);
-        return { link, li, text };
+    a.appendChild(newCreatedNav);
+    li.appendChild(a);
+    console.log(select.appendChild(li)); 
     }
 }
 createNavigation();
@@ -68,22 +61,12 @@ function makeActive() {
         // Add class 'active' to the navigation links
         navLinks[i].classList.remove('active');
         this.classList.add('active');        
-        //clicking active links will also go to section areas and add and remove your-active-class class.
-        activeSection();
-    }
-    function activeSection() {
-        if (navLinks[i].classList.contains('active')) {
-            mainSections[i].classList.add('your-active-class');
-        } else {
-            mainSections[i].classList.remove('your-active-class');
-        }
     }
 }
-
-//activating the active class link and the section class: your-active-class
+//activating each linked by the clicking event
 function nowActive() {
-    for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener('click', makeActive);
+    for(const navLink of navLinks){
+        navLink.addEventListener('click', makeActive )
     }
 }
 nowActive();
