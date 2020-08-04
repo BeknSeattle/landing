@@ -131,5 +131,13 @@ window.addEventListener('scroll', function (e) {
         }      
     }
 }, false);
-
-
+//button going back to top page
+const id = document.getElementById('backToTop');
+function backToTop() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+}
+id.addEventListener('click', backToTop);
